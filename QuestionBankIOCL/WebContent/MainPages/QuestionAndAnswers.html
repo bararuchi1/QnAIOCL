@@ -1,0 +1,11 @@
+<div>
+<div class="jumbotron" align="center">
+	<h1>{{questionAndAnswer[0].questionCatagory}}</h1>
+</div>
+<!-- <div class="col-md-12" align="center"><button class="btn btn-primary btn-primaryQnA" ng-disabled="true">{{questionAndAnswer[0].questionCatagory}}</button></div> -->
+<div ng-repeat="x in questionAndAnswer">
+
+<span class="text-danger">{{$index +1}}.</span><p class="text-danger">{{x.questionDesc}}</p>
+<p class="text-red">{{x.questionAnswer}}</p>
+</div>
+</div>

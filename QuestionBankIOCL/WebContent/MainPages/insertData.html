@@ -1,0 +1,40 @@
+<div class="jumbotron" align="center">
+	<h1>Insert Questions</h1>
+	<p style="color:red">{{errMsg}}</p>
+	<p style="color:green">{{SuccessMsg}}</p>
+</div>
+<link rel="stylesheet" href="../css/styleButton.css">
+<div ng-init="getProductList()">	<form  name="insertQnA" ng-submit="callInsertQnASubmit.submit(insertQnA,submitButtonValue)" >
+		<div class="form-group col-md-3">
+			<label for="forms.catagory">Select Catagory :</label>
+			<select class="form-control" name="catagoryOption" ng-model="forms.catagory" ng-options="x.name as x.name for x in productList 	| unique:'name'" ng-disabled="catagory" required>
+				<option value="">------------Select-------------</option>
+			</select>
+		</div>
+		<div class="form-group col-md-2 col-offset-2">
+			<label for="forms.count">Number Of Question :</label>
+			<input class="form-control "  min="1" max="10" type="number" name="questionCount" ng-model="forms.count" ng-readonly="questionCount" >
+			
+			<span style="color:red" ng-show="ErrMsg">{{ErrMsg}}</span>
+		</div>
+		<div ng-show="qnaShow" class="form-group col-md-12" ng-repeat="x in [].constructor(qnACount) track by $index ">
+			<label for="forms.count">Question {{$index+1}}:</label>
+			<input class="form-control"  type="text" ng-readonly="qnaDisable" ng-model="forms.qnA[$index+1].questions">
+			<label for="forms.count">Answer :</label>
+			<textarea class="form-control"  rows="5" ng-readonly="qnaDisable" ng-model="forms.qnA[$index+1].answers"></textarea>
+		</div>
+
+		<div class="form-group col-md-2">
+		<button  type="submit" class="button">
+  				<span>{{submitButtonValue}}</span>
+		</button>
+		
+		 </div>
+		
+		 <div class="form-group col-md-6 col-md-offset-2" ng-hide="anotherButton">
+		 <button  type="button" ng-click="callButtonTwofunction()" class="button">
+  				<span>{{submitAnotherButtonValue}}</span>
+		</button>
+		</div>
+	</form>
+</div>

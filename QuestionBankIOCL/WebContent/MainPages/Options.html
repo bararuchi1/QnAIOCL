@@ -1,0 +1,20 @@
+
+<div  ng-init="getProductList()">
+<div class="jumbotron" align="center">
+	<h1>Question Bank</h1>
+	<p>{{errMsg}}</p>
+</div>
+
+
+<div class="card-columns">
+	<div ng-repeat="x in productList">
+		<div class="card bg-primary"
+			ng-click="getQuestionList(x.name)">
+			<div class="card-body text-center">
+				<p class="card-text">{{x.name}}</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>

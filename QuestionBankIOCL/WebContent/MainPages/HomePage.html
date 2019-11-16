@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Question Bank</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Angular JS -->
+<script type="text/javascript" src="../angular/angular.min.js"></script>
+<script type="text/javascript" src="../angular/angular-route.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/css/bootstrap.min.css">
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../javascript/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap/css/styleOverRidden.css">
+<script type="text/javascript" src="../javascript/questionBank.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="homeController" ng-init="checkSession();">
+	<div class="sidenav">
+		<a href="" ng-click="callHomeUrl()">Home</a> 
+		<a href="" ng-if="userSessionUserType=='ADMIN'" ng-click="goToInsertPage()" ng-show="true">Add Question</a>
+		<a href="" style="color:red" ng-click="logOut()">LOGOUT</a>
+		<!-- <a href="#!options">Clients</a> -->
+		<!-- <a href="#contact">=={{questions[0].questionCatagory}}</a> --> 
+	</div>
+
+	<div class="main">
+	
+		<div ng-view></div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>IOCL</title>
+
+<!-- Angular and Bootstrap -->
+<script type="text/javascript" src="./angular/angular.min.js"></script>
+<script type="text/javascript" src="./angular/angular-route.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="./bootstrap/css/bootstrap.min.css">
+<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./javascript/jquery.min.js"></script>
+<!-- Angular & Bootstrap End -->
+
+<script type="text/javascript" src="./javascript/loginPage.js	"></script>
+<link rel="stylesheet" type="text/css"
+	href="./css/LogInPageStyleSheet.css">
+</head>
+<body ng-app="loginApp" ng-controller="loginController">
+<!-- 	<form action="" method="post"> -->
+		<div class="imgcontainer">
+			<img src="./img/IOCL_Log_in.png" alt="Avatar" class="avatar">
+		</div>
+
+		<div class="container" align="center">
+			<label for="uname"><b>Username </b></label> <input type="text"
+				placeholder="Enter Username" name="uname" ng-model="uname" ng-click="checkDemo()" required> <br><label
+				for="psw"><b>Password </b></label> <input type="password"
+				placeholder="Enter Password" name="psw" ng-model="password" required><br>
+
+			<button type="submit" ng-click="setSession()">Login</button>
+			<div style="color:red">{{loginStatus}}</div>
+		</div>
+	
+		
+<!-- 	</form> -->
+</body>
+</html>
